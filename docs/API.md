@@ -37,3 +37,22 @@
 | `sensitiveData` | boolean | 包含敏感个人信息 |
 
 接口统一返回 `ApiResponse`；业务冲突使用 HTTP 409，参数错误使用 400，未认证使用 401，无权限使用 403。
+
+## V2.0 隐私合规运营接口
+
+| 方法 | 路径 | 说明 |
+| --- | --- | --- |
+| GET | `/api/privacy-ops/dashboard` | 处理活动、评估、同意与主体请求总览 |
+| POST | `/api/privacy-ops/activities` | 建立个人信息处理活动 |
+| POST | `/api/privacy-ops/activities/{id}/assessments` | 发起影响评估并记录剩余风险 |
+| POST | `/api/admin/privacy-ops/assessments/{id}/approve` | 审批影响评估 |
+| POST | `/api/privacy-ops/activities/{id}/submit` | 提交处理活动审核 |
+| POST | `/api/admin/privacy-ops/activities/{id}/approve` | 批准处理活动 |
+| POST | `/api/privacy-ops/consents` | 记录用户同意 |
+| POST | `/api/privacy-ops/consents/{id}/revoke` | 撤回用户同意 |
+| POST | `/api/privacy-ops/requests` | 受理数据主体请求 |
+| POST | `/api/privacy-ops/requests/{id}/verify` | 完成主体身份核验 |
+| POST | `/api/privacy-ops/requests/{id}/fulfill` | 履行请求并生成删除任务 |
+| POST | `/api/admin/privacy-ops/retention/run` | 执行到期数据保留扫描 |
+
+敏感数据或跨境处理必须先完成影响评估；高剩余风险会阻止批准。删除类主体请求履行时会创建可跟踪的删除任务。

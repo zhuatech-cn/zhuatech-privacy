@@ -66,3 +66,7 @@ Copyright © 2026 上海如静知华信息科技有限公司。
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：数据隐私合规平台、PRIV系统源码、企业数字化、Java企业系统、Vue管理系统、知华科技、上海如静知华信息科技有限公司。
+
+## V2.0 专业领域能力
+
+新增个人信息处理活动、影响评估、同意证明、主体权利请求和删除任务模型。敏感个人信息或跨境处理必须先完成PIA，高剩余风险禁止批准；同意支持可证明授权和撤回；删除请求须先完成身份核验，履行后自动形成删除任务，保留期限扫描支持批量处置。专业API根路径为 `/api/privacy-ops`。
